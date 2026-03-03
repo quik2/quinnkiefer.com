@@ -28,7 +28,6 @@ export default async function OGImage({ params }: { params: Promise<{ slug: stri
           width: "100%",
           height: "100%",
           display: "flex",
-          position: "relative",
           overflow: "hidden",
           backgroundColor: "#111",
         }}
@@ -40,61 +39,15 @@ export default async function OGImage({ params }: { params: Promise<{ slug: stri
             width={1680}
             height={882}
             style={{
-              position: "absolute",
-              top: "-18%",
-              left: "-20%",
               width: "140%",
               height: "140%",
               objectFit: "cover",
               objectPosition: "center 38%",
+              marginTop: "-12%",
+              marginLeft: "-20%",
             }}
           />
         )}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.05) 100%)",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-end",
-            padding: "56px",
-          }}
-        >
-          <div
-            style={{
-              color: "rgba(255,255,255,0.35)",
-              fontSize: 16,
-              letterSpacing: "0.25em",
-              textTransform: "uppercase" as const,
-              marginBottom: 16,
-            }}
-          >
-            Quinn Kiefer
-          </div>
-          <div
-            style={{
-              color: "white",
-              fontSize: 64,
-              lineHeight: 1.1,
-              fontWeight: 400,
-              fontFamily: "serif",
-            }}
-          >
-            {post.title}
-          </div>
-          <div
-            style={{
-              color: "rgba(255,255,255,0.55)",
-              fontSize: 22,
-              marginTop: 18,
-              lineHeight: 1.4,
-            }}
-          >
-            {post.description}
-          </div>
-        </div>
       </div>
     ),
     { ...size }
