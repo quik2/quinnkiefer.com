@@ -5,6 +5,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ShareButton } from "@/components/ShareButton";
 
 export async function generateStaticParams() {
   return getAllPosts().map((p) => ({ slug: p.slug }));
@@ -81,9 +82,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <h1 className="mt-6 font-serif text-3xl sm:text-4xl lg:text-[2.75rem] text-[#111] leading-[1.15] tracking-[-0.02em]">
             {post.title}
           </h1>
-          <p className="mt-4 text-[13px] text-[#aaa]">
-            {formatDate(post.date)} &nbsp;&middot;&nbsp; {mins} min read
-          </p>
+          <div className="mt-4 flex items-center gap-3 text-[13px] text-[#aaa]">
+            <span>{formatDate(post.date)} &nbsp;&middot;&nbsp; {mins} min read</span>
+            <span className="text-[#ddd]">&middot;</span>
+            <ShareButton title={post.title} url={`https://quinnkiefer.com/blog/${slug}`} />
+          </div>
         </div>
 
         <article className="mt-10 article-body">
