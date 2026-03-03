@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const links = [
   { label: "Home", href: "/" },
@@ -10,17 +11,20 @@ const links = [
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const isArticle = pathname.startsWith("/blog/") && pathname !== "/blog";
 
   useEffect(() => {
+    if (isArticle) return;
     const fn = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", fn, { passive: true });
     return () => window.removeEventListener("scroll", fn);
-  }, []);
+  }, [isArticle]);
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-white/80 backdrop-blur-xl border-b border-[#eee]" : ""
+      className={`${isArticle ? "absolute" : "fixed"} top-0 inset-x-0 z-50 transition-all duration-500 ${
+        scrolled && !isArticle ? "bg-white/80 backdrop-blur-xl border-b border-[#eee]" : ""
       }`}
     >
       <nav className="max-w-[1200px] mx-auto px-6 sm:px-10 h-[56px] flex items-center gap-8">

@@ -205,7 +205,7 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="text-[13px] text-[#bbb] hover:text-[#111] transition-colors duration-300"
                     >
-                      {l.label}&thinsp;&#8599;
+                      {l.label}<span className="inline-block ml-1 text-[0.7em]" style={{ fontFamily: "Arial, sans-serif" }}>&#x2197;&#xFE0E;</span>
                     </a>
                   ))}
                 </div>
