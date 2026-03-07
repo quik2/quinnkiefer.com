@@ -162,7 +162,7 @@ export default function Home() {
                       <span className="text-[12px] text-[#ccc]">{p.role}</span>
                     </div>
                     <span className="text-[12px] text-[#bbb] group-hover:text-[#111] transition-colors duration-300">
-                      {p.domain}&thinsp;&#8599;
+                      {p.domain}&thinsp;&#x2197;&#xFE0E;
                     </span>
                   </a>
                 ))}
