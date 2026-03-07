@@ -30,6 +30,29 @@ body::before {
   background-size: 256px;
 }
 
+/* drop cap on first paragraph of articles */
+.article-body .prose > p:first-of-type::first-letter {
+  float: left;
+  font-size: 4.1em;
+  line-height: 0.82;
+  margin-right: 0.07em;
+  margin-top: 0.06em;
+  color: #111;
+}
+
+/* link underline draw — applies to elements with class draw-link */
+.draw-link {
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.35s cubic-bezier(0.25, 0.1, 0, 1);
+}
+.draw-link:hover {
+  background-size: 100% 1px;
+}
+
 /* section breaks */
 .article-body .prose hr {
   border: none !important;

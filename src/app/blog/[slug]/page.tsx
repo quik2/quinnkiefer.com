@@ -6,6 +6,7 @@ import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ShareButton } from "@/components/ShareButton";
+import { ProgressBar } from "@/components/ProgressBar";
 
 export async function generateStaticParams() {
   return getAllPosts().map((p) => ({ slug: p.slug }));
@@ -56,6 +57,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   return (
     <>
+      <ProgressBar />
       <Header />
 
       {post.image && (

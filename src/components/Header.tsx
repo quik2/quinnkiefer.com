@@ -32,7 +32,7 @@ export function Header() {
           <Link
             key={l.label}
             href={l.href}
-            className="text-[13px] text-[#999] hover:text-[#111] transition-colors duration-300"
+            className="draw-link text-[13px] text-[#999] hover:text-[#111] transition-colors duration-300"
           >
             {l.label}
           </Link>

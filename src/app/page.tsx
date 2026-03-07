@@ -137,6 +137,49 @@ export default function Home() {
         </R>
       </section>
 
+      {/* ═══════ PROJECTS ═══════ */}
+      <section className="px-6 sm:px-10 pt-20 sm:pt-32">
+        <div className="max-w-[1200px] mx-auto">
+          <R>
+            <div className="grid grid-cols-1 sm:grid-cols-[160px_1fr] gap-4 sm:gap-16">
+              <p className="text-[11px] text-[#ccc] uppercase tracking-[0.2em] sm:pt-[6px]">
+                Projects
+              </p>
+              <div>
+                {[
+                  {
+                    name: "Narrow",
+                    desc: "Video interview platform for small teams",
+                    href: "https://narrowrecruit.com",
+                  },
+                  {
+                    name: "Sugarwish",
+                    desc: "Product engineer",
+                    href: "https://sugarwish.com",
+                  },
+                ].map((p, i, arr) => (
+                  <a
+                    key={p.name}
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`group flex items-center justify-between py-5 ${i === 0 ? "" : "border-t border-[#f0f0f0]"} ${i === arr.length - 1 ? "" : ""}`}
+                  >
+                    <div>
+                      <p className="text-[15px] text-[#111]">{p.name}</p>
+                      <p className="text-[13px] text-[#bbb] mt-0.5">{p.desc}</p>
+                    </div>
+                    <span className="text-[#ccc] group-hover:text-[#111] group-hover:translate-x-1 transition-all duration-300 text-[13px]">
+                      &#8594;
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </R>
+        </div>
+      </section>
+
       {/* ═══════ COLOPHON ═══════ */}
       <section className="py-20 sm:py-44 px-6 sm:px-10">
         <div className="max-w-[1200px] mx-auto">
