@@ -138,7 +138,7 @@ export default function Home() {
       </section>
 
       {/* ═══════ PROJECTS ═══════ */}
-      <section className="px-6 sm:px-10 pt-20 sm:pt-32">
+      <section className="px-6 sm:px-10 pt-20 sm:pt-28">
         <div className="max-w-[1200px] mx-auto">
           <R>
             <div className="grid grid-cols-1 sm:grid-cols-[160px_1fr] gap-4 sm:gap-16">
@@ -147,30 +147,22 @@ export default function Home() {
               </p>
               <div>
                 {[
-                  {
-                    name: "Narrow",
-                    desc: "Video interview platform for small teams",
-                    href: "https://narrowrecruit.com",
-                  },
-                  {
-                    name: "Sugarwish",
-                    desc: "Product engineer",
-                    href: "https://sugarwish.com",
-                  },
-                ].map((p, i, arr) => (
+                  { name: "Narrow", role: "Founder", href: "https://narrowrecruit.com", domain: "narrowrecruit.com" },
+                  { name: "Sugarwish", role: "Product Engineer", href: "https://sugarwish.com", domain: "sugarwish.com" },
+                ].map((p, i) => (
                   <a
                     key={p.name}
                     href={p.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`group flex items-center justify-between py-5 ${i === 0 ? "" : "border-t border-[#f0f0f0]"} ${i === arr.length - 1 ? "" : ""}`}
+                    className={`group flex items-baseline justify-between py-4 ${i > 0 ? "border-t border-[#f5f5f5]" : ""}`}
                   >
-                    <div>
-                      <p className="text-[15px] text-[#111]">{p.name}</p>
-                      <p className="text-[13px] text-[#bbb] mt-0.5">{p.desc}</p>
+                    <div className="flex items-baseline gap-4">
+                      <span className="text-[15px] text-[#111]">{p.name}</span>
+                      <span className="text-[12px] text-[#ccc]">{p.role}</span>
                     </div>
-                    <span className="text-[#ccc] group-hover:text-[#111] group-hover:translate-x-1 transition-all duration-300 text-[13px]">
-                      &#8594;
+                    <span className="text-[12px] text-[#bbb] group-hover:text-[#111] transition-colors duration-300">
+                      {p.domain}&thinsp;&#8599;
                     </span>
                   </a>
                 ))}
@@ -212,30 +204,7 @@ export default function Home() {
                   </a>
                   . I write about technology, work, and what comes next.
                 </p>
-                <div className="mt-8 sm:mt-10 flex gap-8">
-                  {[
-                    { label: "X", href: "https://x.com/quinn28202" },
-                    { label: "GitHub", href: "https://github.com/quik2" },
-                    {
-                      label: "LinkedIn",
-                      href: "https://linkedin.com/in/quinn-kiefer-0bb360294",
-                    },
-                    {
-                      label: "Email",
-                      href: "mailto:quinn@narrowrecruiting.com",
-                    },
-                  ].map((l) => (
-                    <a
-                      key={l.label}
-                      href={l.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[13px] text-[#bbb] hover:text-[#111] transition-colors duration-300"
-                    >
-                      {l.label}<span className="inline-block ml-1 text-[0.7em]" style={{ fontFamily: "Arial, sans-serif" }}>&#x2197;&#xFE0E;</span>
-                    </a>
-                  ))}
-                </div>
+
               </div>
             </div>
           </R>

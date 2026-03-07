@@ -53,11 +53,43 @@ body::before {
   background-size: 100% 1px;
 }
 
-/* section breaks */
+/* lead paragraph — first paragraph slightly larger */
+.article-body .prose > p:first-of-type {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.85;
+}
+
+/* section dividers — ornament instead of a line */
 .article-body .prose hr {
   border: none !important;
-  border-top: 1px solid #e5e5e5 !important;
   background: none !important;
-  height: 0 !important;
-  margin: 2.5rem 0 !important;
+  height: 2.5rem !important;
+  margin: 1.5rem 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.article-body .prose hr::before {
+  content: '· · ·';
+  color: #ccc;
+  font-size: 13px;
+  letter-spacing: 0.6em;
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+/* pull-quote blockquotes */
+.article-body .prose blockquote {
+  border-left: none !important;
+  padding: 1.5rem 0 !important;
+  margin: 2rem 0 !important;
+}
+.article-body .prose blockquote p {
+  font-family: inherit;
+  font-size: clamp(1.15rem, 2.5vw, 1.4rem) !important;
+  color: #111 !important;
+  line-height: 1.5 !important;
+  font-style: italic;
 }

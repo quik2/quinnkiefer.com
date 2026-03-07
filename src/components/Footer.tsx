@@ -22,9 +22,9 @@ export function Footer() {
             <div className="flex gap-8">
               {[
                 { label: "X", href: "https://x.com/quinn28202" },
-                { label: "LinkedIn", href: "https://linkedin.com/in/quinn-kiefer-0bb360294" },
                 { label: "GitHub", href: "https://github.com/quik2" },
-                { label: "Narrow", href: "https://narrowrecruit.com" },
+                { label: "LinkedIn", href: "https://linkedin.com/in/quinn-kiefer-0bb360294" },
+                { label: "Email", href: "mailto:quinn@narrowrecruiting.com" },
               ].map((l) => (
                 <a
                   key={l.label}
