@@ -95,28 +95,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════ PULL QUOTE ═══════ */}
-      <section className="px-6 sm:px-10 py-16 sm:py-32">
-        <div className="max-w-[1200px] mx-auto">
-          <R>
-            <blockquote className="max-w-3xl">
-              <p className="font-serif text-[clamp(1.4rem,3.8vw,3rem)] text-[#111] leading-[1.35] tracking-[-0.01em]">
-                <span className="text-[#ccc]">&ldquo;</span>
-                I&apos;m twenty years old, and my life plan is already
-                outdated.
-                <span className="text-[#ccc]">&rdquo;</span>
-              </p>
-              <Link
-                href="/blog/the-promise"
-                className="inline-block mt-4 sm:mt-6 text-[13px] text-[#bbb] hover:text-[#111] transition-colors duration-300"
-              >
-                from <em>The Promise</em>&thinsp;&#8594;
-              </Link>
-            </blockquote>
-          </R>
-        </div>
-      </section>
-
       {/* ═══════ FEATURED — full bleed ═══════ */}
       <section ref={articleRef}>
         <R>
@@ -169,17 +147,8 @@ export default function Home() {
               </p>
               <div>
                 <p className="text-[15px] sm:text-[16px] text-[#666] leading-[1.9] sm:leading-[2] max-w-lg">
-                  I build things at the intersection of people and technology.
-                  Currently a product engineer at{" "}
-                  <a
-                    href="https://sugarwish.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#111] hover:underline underline-offset-4"
-                  >
-                    Sugarwish
-                  </a>{" "}
-                  and founder of{" "}
+                  I&apos;m twenty, studying Cognitive Science at UCLA. I
+                  bootstrapped{" "}
                   <a
                     href="https://narrowrecruit.com"
                     target="_blank"
@@ -188,14 +157,29 @@ export default function Home() {
                   >
                     Narrow
                   </a>
-                  , a video interview platform bootstrapped from zero.
+                  , a video interview platform, from zero while in school. I
+                  also build product at{" "}
+                  <a
+                    href="https://sugarwish.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#111] hover:underline underline-offset-4"
+                  >
+                    Sugarwish
+                  </a>
+                  . I write about technology, work, and what comes next.
                 </p>
                 <div className="mt-8 sm:mt-10 flex gap-8">
                   {[
+                    { label: "X", href: "https://x.com/quinn28202" },
                     { label: "GitHub", href: "https://github.com/quik2" },
                     {
                       label: "LinkedIn",
                       href: "https://linkedin.com/in/quinn-kiefer-0bb360294",
+                    },
+                    {
+                      label: "Email",
+                      href: "mailto:quinn@narrowrecruiting.com",
                     },
                   ].map((l) => (
                     <a
