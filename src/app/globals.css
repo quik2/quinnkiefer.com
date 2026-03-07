@@ -30,14 +30,15 @@ body::before {
   background-size: 256px;
 }
 
-/* drop cap on first paragraph of articles */
-.article-body .prose > p:first-of-type::first-letter {
+/* drop cap — use <span class="drop-cap"> in MDX for full-word control */
+.drop-cap {
   float: left;
   font-size: 4.1em;
   line-height: 0.82;
   margin-right: 0.07em;
   margin-top: 0.06em;
   color: #111;
+  font-style: normal;
 }
 
 /* link underline draw — applies to elements with class draw-link */
